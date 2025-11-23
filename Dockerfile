@@ -3,6 +3,8 @@ FROM gradle:8.5-jdk21 AS build
 WORKDIR /app
 #Para copiar código del proyecto al contenedor
 COPY . .
+#Permiso a gradlew
+RUN chmod +x gradlew
 #Para crear el .jar
 RUN ./gradlew clean build --no-daemon -x test
 
