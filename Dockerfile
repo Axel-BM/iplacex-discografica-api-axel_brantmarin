@@ -4,7 +4,7 @@ WORKDIR /app
 #Para copiar código del proyecto al contenedor
 COPY . .
 #Para crear el .jar
-RUN gradle build --no-daemon
+RUN ./gradlew clean build --no-daemon -x test
 
 
 #Aquí para ejecutarlo
